@@ -64,9 +64,10 @@ namespace Shop
         {
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
             }
 
+            app.UseDeveloperExceptionPage();
             app.UseHttpsRedirection();
 
             app.UseSwagger();
