@@ -38,7 +38,7 @@ public class CategoryController : ControllerBase
 
     [HttpPost]
     [Route("")]
-    [Authorize(Roles = "employee")]
+    [Authorize(Roles = "manager")]
     public async Task<ActionResult<Category>> Post([FromBody] Category model, [FromServices] DataContext context)
     {
         if (!ModelState.IsValid)
@@ -59,7 +59,7 @@ public class CategoryController : ControllerBase
 
     [HttpPut]
     [Route("{id:int}")]
-    [Authorize(Roles = "employee")]
+    [Authorize(Roles = "manager")]
     public async Task<ActionResult<Category>> Put(int id, [FromBody] Category model, [FromServices] DataContext context)
     {
         if (!model.Id.Equals(id))
@@ -86,7 +86,7 @@ public class CategoryController : ControllerBase
 
     [HttpDelete]
     [Route("{id:int}")]
-    [Authorize(Roles = "employee")]
+    [Authorize(Roles = "manager")]
     public async Task<ActionResult<Category>> Delete(int id, [FromServices] DataContext context)
     {
         var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);

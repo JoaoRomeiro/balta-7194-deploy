@@ -40,7 +40,7 @@ namespace Shop.Controllers
             try
             {
                 // Força o usuário a ser sempre "funcionário"
-                model.Role = "employee";
+                model.Role = "manager";
 
                 context.Users.Add(model);
                 await context.SaveChangesAsync();

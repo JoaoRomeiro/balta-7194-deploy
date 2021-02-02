@@ -50,7 +50,7 @@ public class ProductController : ControllerBase
 
     [HttpPost]
     [Route("")]
-    [Authorize(Roles = "employee")]
+    [Authorize(Roles = "manager")]
     public async Task<ActionResult<Product>> Post([FromBody] Product model, [FromServices] DataContext context)
     {
         if (!ModelState.IsValid)
